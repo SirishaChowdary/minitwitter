@@ -1,0 +1,28 @@
+entity Person {
+	firstName String,
+    lastName String,
+    userId String,
+    email String
+}
+
+entity Message {
+	messageId Long,
+    text String,
+}
+
+
+// defining multiple OneToMany relationships with comments
+relationship OneToMany {
+	Person{message} to Message
+	
+	
+}
+
+relationship OneToMany {
+	Person{following} to Person
+	
+}
+
+dto * with mapstruct
+
+service all with serviceImpl 
